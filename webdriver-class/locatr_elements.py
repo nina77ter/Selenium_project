@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
 
-HOST = "https://demoqa.com/text-box"
+HOST = "https://demoqa.com/browser-windows"
 
 # created the object for chromedriver that talks to Chrome Browser
 chr_options = Options()
@@ -42,3 +42,7 @@ driver.find_element(By.PARTIAL_LINK_TEXT, 'mail').click()
 time.sleep(5)
 driver.quit()
 print('Test is complited!!')
+
+print('This my curent url:', driver.current_url)
+print('drver.name:', driver.name)
+print('driver.orientation:', driver)
