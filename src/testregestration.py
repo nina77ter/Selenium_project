@@ -1,25 +1,14 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import *
 import time
 
-from utilities import *
+from src.utilities import *
 
 HOST = "https://demoqa.com/automation-practice-form"
-
-# created the object for chromedriver that talks to Chrome Browser
-chr_options = Options()
-chr_options.add_experimental_option("detach", True)
-# chr_options.add_experimental_option('excludeSwitches',["disable-popup-blocking"])
-driver = webdriver.Chrome(options=chr_options)
-print('maximizing the browser window')
-driver.maximize_window()
-# This sets a sticky timeout to implicitly wait for an element to be found, or a command to complete.
-driver.implicitly_wait(20)
-time.sleep(0)
-
+@pytest.mark.form1
+def test_forms_case1(driver):
 
 try:
     # Input DATA:
